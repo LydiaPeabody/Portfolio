@@ -1,7 +1,7 @@
 # Portfolio
 Interested in getting a sense of what I can do with data and code? <br>
 
-Have a look in here for a selection of projects demonstrating skills including data preparation, cleaning, visualization, and modelling, as well as web scraping and a use of python packages.  <br>
+Look in here for a selection of projects demonstrating skills including data preparation, cleaning, visualization, and modelling, as well as web scraping and a use of python packages.  <br>
 
 Looking for interesting visualizations? <br>
 Check out projects 2 and 3 from the GA Data Science Immersive course. <br>
