@@ -15,7 +15,7 @@ In addition to looking to understand overall levels of industry compliance with 
 
 This is a work in progress - reach out if you're interested to know more, or if you have suggestions for questions or data to incorporate.
 
-## Project Progress:
+## Project Progress
 ### Data Collection - complete
 Data consistes of job descriptions scraped from job search websites. I have chosen a number of industries to begin analysis, looking for a mix of industries considered gender dominated and mixed gender. These include:
 * Female dominated - Nursing, Early Learning
@@ -44,7 +44,7 @@ After testing a variety of natural language processing options on the job descri
 ### Model operationalization
 I have created an operational model using flask, but it is not yet available as a live website.
 
-## Next Steps / Future improvements:
+## Next Steps / Future improvements
 Work to improve class generalization / reduce overfitting, potentially via:
 * Feature selection involving prioritzing features via intra-class industry tf-idf calculations
 * Testing BERT / neural network based models to increase contextual awareness
