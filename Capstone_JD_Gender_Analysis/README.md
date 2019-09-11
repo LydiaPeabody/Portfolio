@@ -15,8 +15,8 @@ In addition to looking to understand overall levels of industry compliance with 
 
 This is a work in progress - reach out if you're interested to know more, or if you have suggestions for questions or data to incorporate.
 
-## Current Progress:
-### Data Collection
+## Project Progress:
+### Data Collection - complete
 Data consistes of job descriptions scraped from job search websites. I have chosen a number of industries to begin analysis, looking for a mix of industries considered gender dominated and mixed gender. These include:
 * Female dominated - Nursing, Early Learning
 * Mixed - Retail, Hospitality
@@ -28,22 +28,27 @@ Bonus industries:
 Features generated through scraping for each job include:
 Job Title, Job Description Text, Company Name, Company Rating (stars), Salary, Industry (based on search terms), Location (based on search) 
 
-### Data Cleaning
+### Data Cleaning - complete
 Initial data collection resulted in about 40,000 rows of data, with each row representing one job
 * Removed duplicate data - almost 50% of scraped roles are duplicates
 * Dropped rows with no job description text
 * Pulled numerical salary and pay period from salary text, created equivalent annual salary
 * Formatted text: removing common (uninformative) words and punctuation
 
-### EDA: Exploratory Data Analysis
+### EDA: Exploratory Data Analysis - complete
 I have had an initial look at the data, and begun creating additional features using NLP techniques, such as "sentiment," as well as a basic target column of industry gender dominance (mixed, female, male), based on Australian government statistics. Some features like "sentiment" show potential. Initial LDA visualization shows a clear separation between clusters appearing to represent female-dominated and male-dominated industries. Inital exploration of "gender-coded words" from prior research on job descriptions shows little connection to industry dominance. This may be a real indicator, but I suspect I need to write a better search function to handle stemmed words.
 
-## Next Steps:
-Continue feature creation and text cleaning
-* Identify qualifications / requirements for jobs
-* Improve cleaning processes converting JD strings to individual words
+### Feature creation, selection, and model development - reasonable models developed, but opportunity for improvement
+After testing a variety of natural language processing options on the job description text, as well as experimenting with other features, a the best performing model used a tf-idf vectorizer for feature creation, with a logistic regression model. This model performed at over 88% accuracy with test data of job descriptions from training industries, but dropped to 75% with other industries, indicating it has overfit to industry-specific elements, rather than generalizing to the broader gender-based classes. 
+
+### Model operationalization
+I have created an operational model using flask, but it is not yet available as a live website.
+
+## Next Steps / Future improvements:
+Work to improve class generalization / reduce overfitting, potentially via:
+* Feature selection involving prioritzing features via intra-class industry tf-idf calculations
+* Testing BERT / neural network based models to increase contextual awareness
+* Improve equal-opportunity-employer statement detector
+* Add equal-opportunity-employer statement detector in operational model webpage
 * Separate staff and "management/leadership level positions for separate analysis
 
-Modelling
-* Test both clustering and classification models relative to the industry gender domininace target
-* Perform significance testing on observed differences from EDA
