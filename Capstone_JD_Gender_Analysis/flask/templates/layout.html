@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.3/dist/loadingoverlay.min.js"></script>
+    <style>
+        .dataframe {
+            table-layout: fixed;
+            width: 100%;
+            border: 1px solid #F8F8F8;
+            border-collapse: collapse;
+            white-space: normal;
+        }
+        /* td {
+            white-space: nowrap;
+            text-overflow:wrap;
+            overflow:visible;
+            /* text-wrap:normal; */
+        /* word-wrap: break-word; */
+        /* }  */
+        th {
+            color: #777777;
+            background-color: #F8F8F8;
+        }
+        /* Column widths are based on these cells */
+        .row-Sentences {
+            /* width: 70%; */
+            color: red;
+        }
+
+        .row-Predictions {
+            /* width: 30%; */
+            color: green;
+        }
+        /* .row-job {
+        width: 30%;
+        }
+        .row-email {
+        width: 20%;
+        } */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 99;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal1 {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0);
+        }
+
+        .modal-content {
+            background-color: rgba(0,0,0,.5);
+            margin: 10% auto;
+            width: 40%;
+            box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+            animation-name: modalopen;
+            animation-duration: 0.5s;
+            border: none;
+            border-radius: 20px;
+            z-index:100;
+            padding: 20px;
+            color:white;
+        }
+
+        .modal-header h4, .modal-footer h5 {
+            margin: 0;
+        }
+
+        .modal-header {
+            background: rgba(0,0,0,.1);
+            padding: 2px;
+            color: #fff;
+        }
+
+        .modal-body {
+            padding: 10px 20px;
+        }
+
+        .modal-footer {
+            background: rgba(0,0,0,.1);
+            padding: 10px;
+            color: #fff;
+            text-align: right;
+        }
+
+        .closeBtn {
+            color: #ccc;
+            float: right;
+            font-size: 30px;
+            color: #fff;
+        }
+
+            .closeBtn:hover, .closeBtn:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        @keyframes modalopen {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 2
+            }
+        }
+
+    </style>
+</head>
+
+<body style="background-color: #ffad33">
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+
+        </button>
+        <a class="navbar-brand" href="/">Gender and Job Descriptions</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li><a href="{{ url_for('model') }}">Model</a></li> -->
+
+        </ul>
+        <ul class="nav navbar-nav navbar"></ul>
+        <ul class="nav navbar-nav navbar-right">
+         <!-- <li><a href="#">Link</a></li>-->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Information<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="https://www.wgea.gov.au/">Workplace Gender Equality Agency</a></li>
+              <li><a href="https://www.glassdoor.com/employers/blog/10-ways-remove-gender-bias-job-listings/?nabe=6392912005562368:0"0
+                >Advice for removing gender bias</a></li>
+              <li><a href="http://gender-decoder.katmatfield.com">Gender Decoder</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+    <div class="container body-content">
+        {% block content %}{% endblock %}
+        <!--<hr />
+        <footer>
+            <p>&copy; {{ year }} - Brian Farrell</p>
+        </footer>-->
+    </div>
+
+    <script src="/static/scripts/jquery-1.10.2.js"></script>
+    <script src="/static/scripts/bootstrap.js"></script>
+    <script src="/static/scripts/respond.js"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

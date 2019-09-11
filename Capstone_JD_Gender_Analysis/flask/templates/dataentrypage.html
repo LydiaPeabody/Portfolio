@@ -1,0 +1,48 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+    <center> <h1><font color="black">Is your job description</font></h1></center>
+    <center> <h1><font color="black">accidentally targeting one gender?</font></h1></center>
+    <div style="position: absolute; width: 600px; height: 100px; z-index: 15; top: 40%; left: 40%; margin: -80px 0 0 -150px;">
+        <form action="" method="POST">
+            <textarea rows="15" cols="55" wrap="hard" id="job_description" name="job_description" class="form-control" ;aria-describedby=""
+            placeholder="Paste job description text here."></textarea>
+            <br>
+            <center><input id="modalBtn" class="btn btn-primary" type="submit" value="Predict" /></center>
+        </form>
+    </div>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <div style="font-size:18px;">
+        {% if female > 60 %}
+
+            <img height="150" width="150" src="https://cdn.pixabay.com/photo/2015/08/19/21/30/woman-896672_960_720.png"/>
+            <p></p>
+            <font color="white">  {{female}}% chance female
+            <p></p>
+            dominated industry</font>
+
+         {% elif male > 60 %}
+            <img height="150" width="120" src="https://cdn.pixabay.com/photo/2018/03/26/18/20/man-3263509_960_720.png" />
+            <p></p>
+            <font color="white">  {{male}}% chance male
+            <p></p>
+            dominated industry</font>
+        
+        {% else %}
+            <img height="150" width="150" src="https://cdn.pixabay.com/photo/2015/08/19/21/30/woman-896672_960_720.png"/>
+            <p></p>
+            <font color="white">  It's unclear from our model
+            <p></p>
+            <font color="white">  whether one gender
+            <p></p>
+            <font color="white">  dominates this industry.
+            <p></p>
+            <img height="150" width="120" src="https://cdn.pixabay.com/photo/2018/03/26/18/20/man-3263509_960_720.png" />
+            <p></p>
+        {% endif %}
+    </div>
+
+{% endblock %}

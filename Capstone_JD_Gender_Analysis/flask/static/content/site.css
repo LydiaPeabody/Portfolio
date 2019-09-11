@@ -1,0 +1,60 @@
+table.dataframe {
+  table-layout: fixed;
+  width: 100%;
+  border: 1px solid #F8F8F8;
+  white-space: nowrap;
+}
+.dataframe td {
+    /*white-space: nowrap;*/
+    /*text-overflow:wrap;*/
+    /*overflow:scroll;*/
+    text-wrap:normal;
+    word-wrap: break-word;
+    }
+.dataframe th{
+    color: #e40a0a; 
+    background-color: #F8F8F8;
+}
+/* Column widths are based on these cells */
+.row-ID {
+  width: 10%;
+}
+.row-name {
+  width: 40%;
+}
+.row-job {
+  width: 30%;
+}
+.row-email {
+  width: 20%;
+}
+/* 
+<body>
+    <center>
+        <table border="0" class="users">
+            <thead>
+                <tr>
+                    <th class="row-1 row-ID">ID</th>
+                    <th class="row-2 row-name">Name</th>
+                    <th class="row-3 row-job">Job</th>
+                    <th class="row-4 row-email">Email<th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0001</td>
+                    <td>Johnny Five</td>
+                    <td>Robotin'</td>
+                    <td>need@input.com</td>
+                </tr>
+                <tr>
+                    <td>0002</td>
+                    <td>Super Superlonglastnamesmithd jalskdjf klsdajflasjdl fsdalk jfsladkjf lsakdjflksadj flsdkajf lsdajflksdj lfsjadlfkj sdlfj sdljf sadlkfjsadlkjf lsadjkf</td>
+                    <td>Doin' stuff</td>
+                    <td>doing@stuff.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
+</body>
+</html> */
